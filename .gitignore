@@ -1,0 +1,24 @@
+# .NET build artifacts
+**/obj/
+**/obj/**
+**/bin/
+**/bin/**
+**/TestResults/
+**/*.cache
+**/*.nupkg
+**/*.snupkg
+
+# JetBrains Rider / IntelliJ artifacts
+.idea/
+*.sln.iml
+
+# Visual Studio / user-local files
+.vs/
+*.user
+*.rsuser
+*.suo
+
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+

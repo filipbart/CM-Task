@@ -1,0 +1,6 @@
+@CM_Task.Api_HostAddress = http://localhost:5199
+
+GET {{CM_Task.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
