@@ -12,10 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Common\Errors\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="Autofac" Version="9.1.0" />
       <PackageReference Include="AutoMapper" Version="16.1.1" />
       <PackageReference Include="FluentValidation" Version="12.1.1" />
