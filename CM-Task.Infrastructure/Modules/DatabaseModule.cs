@@ -1,6 +1,5 @@
 using Autofac;
 using CM_Task.Application.Abstractions;
-using CM_Task.Infrastructure.Clock;
 using CM_Task.Infrastructure.Persistence;
 using CM_Task.Infrastructure.Persistence.Repositories;
 using Microsoft.Data.Sqlite;
@@ -42,9 +41,5 @@ public sealed class DatabaseModule : Module
         builder.RegisterAssemblyTypes(typeof(IRepository).Assembly, typeof(ProductRepository).Assembly)
             .Where(t => t.IsAssignableTo<IRepository>())
             .AsImplementedInterfaces();
-
-        builder.RegisterType<SystemClock>()
-            .As<IClock>()
-            .SingleInstance();
     }
 }

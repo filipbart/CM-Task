@@ -13,6 +13,12 @@ public sealed class ProductRepository(AppDbContext dbContext, IUnitOfWork unitOf
     public async Task<IReadOnlyList<Product>> GetAllAsync(CancellationToken ct = default)
         => await _dbContext.Products.AsNoTracking().ToListAsync(ct);
 
+    public Task<Dictionary<Guid, Product>> GetByIdsAsync(IReadOnlyList<Guid> ids, CancellationToken ct = default)
+    {
+        return _dbContext.Products.Where(p => ids.Contains(p.Id))
+            .ToDictionaryAsync(p => p.Id, ct);
+    }
+
     public async Task<bool> ExistsAsync(Guid id, CancellationToken ct = default) =>
         await _dbContext.Products.AnyAsync(p => p.Id == id, ct);
 }
