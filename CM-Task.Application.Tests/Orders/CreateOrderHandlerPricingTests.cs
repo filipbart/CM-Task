@@ -2,7 +2,6 @@ using CM_Task.Application.Abstractions;
 using CM_Task.Application.Discounts;
 using CM_Task.Application.Orders.Commands.CreateOrder;
 using CM_Task.Domain.Entities;
-using CM_Task.Domain.Enums;
 using CM_Task.TestsCore.Builders;
 using FluentAssertions;
 using NSubstitute;
