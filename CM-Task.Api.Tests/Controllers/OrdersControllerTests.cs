@@ -93,7 +93,6 @@ public sealed class OrdersControllerTests : IClassFixture<CustomWebApplicationFa
         });
 
         response.StatusCode.Should().Be(HttpStatusCode.Created);
-        // tu możesz sprawdzić TotalValue gdy dodasz GET /orders/{id}
     }
 
     [Fact]
@@ -125,7 +124,6 @@ public sealed class OrdersControllerTests : IClassFixture<CustomWebApplicationFa
             lines = new[] { new { productId, quantity = 1 } }
         });
 
-        // TotalValue powinno być 115m (100 * 1.15)
         response.StatusCode.Should().Be(HttpStatusCode.Created);
     }
 
