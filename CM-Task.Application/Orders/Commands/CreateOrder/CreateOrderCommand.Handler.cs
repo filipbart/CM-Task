@@ -12,7 +12,7 @@ public sealed class CreateOrderHandler(
     IOrderRepository orderRepository,
     ICustomerRepository customerRepository,
     IUnitOfWork unitOfWork,
-    DiscountEngine discountEngine,
+    IDiscountEngine discountEngine,
     IClock clock) : IRequestHandler<CreateOrderCommand, Guid>
 {
     public async Task<Guid> Handle(CreateOrderCommand command, CancellationToken ct)

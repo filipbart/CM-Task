@@ -4,7 +4,7 @@ namespace CM_Task.Application.Abstractions;
 
 public interface IRepository;
 
-public interface IRepository<T> : ICustomRepository<T> where T : Entity
+public interface IRepository<T> : ICustomRepository<T>, IRepository where T : Entity
 {
     IUnitOfWork UnitOfWork { get; }
 }

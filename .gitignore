@@ -22,3 +22,8 @@
 .DS_Store
 **/.DS_Store
 
+# SQLite database files (created at runtime)
+*.db
+*.db-shm
+*.db-wal
+

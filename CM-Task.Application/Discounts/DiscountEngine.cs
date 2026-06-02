@@ -2,7 +2,7 @@ using CM_Task.Application.Abstractions;
 
 namespace CM_Task.Application.Discounts;
 
-public sealed class DiscountEngine(IEnumerable<IDiscountRule> rules)
+public sealed class DiscountEngine(IEnumerable<IDiscountRule> rules) : IDiscountEngine
 {
     public async Task<DiscountResult?> GetBestDiscount(DiscountContext ctx, CancellationToken ct = default)
     {

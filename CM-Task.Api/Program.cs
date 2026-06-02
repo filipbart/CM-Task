@@ -42,7 +42,7 @@ builder.Services.AddRateLimiter(options =>
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(ApplicationAssemblyMarker.Assembly));
 
-builder.Services.AddValidatorsFromAssembly(typeof(ApplicationModule).Assembly);
+builder.Services.AddValidatorsFromAssembly(ApplicationAssemblyMarker.Assembly);
 
 builder.Services.AddAutoMapper(_ => { }, typeof(MappingProfile).Assembly);
 
@@ -59,6 +59,8 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 app.MapControllers();

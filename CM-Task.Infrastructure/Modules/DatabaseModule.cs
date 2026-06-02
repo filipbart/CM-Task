@@ -10,7 +10,6 @@ namespace CM_Task.Infrastructure.Modules;
 public sealed class DatabaseModule : Module
 {
     private readonly string _connectionString;
-    private static bool _loaded;
 
     public DatabaseModule(string connectionString)
     {
@@ -19,11 +18,6 @@ public sealed class DatabaseModule : Module
 
     protected override void Load(ContainerBuilder builder)
     {
-        builder.RegisterType<AppDbContext>().AsSelf().InstancePerLifetimeScope();
-
-        if (_loaded) return;
-        _loaded = true;
-
         var dataSourceBuilder = new SqliteConnectionStringBuilder(_connectionString);
 
         builder.Register(_ =>

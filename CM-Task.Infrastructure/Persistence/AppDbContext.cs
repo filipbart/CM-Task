@@ -14,7 +14,6 @@ public sealed class AppDbContext(DbContextOptions<AppDbContext> options) : DbCon
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.HasDefaultSchema("cm_task");
         var entities = typeof(Customer).Assembly.GetTypes().Where(t => !t.IsAbstract)
             .Where(t => t.IsSubclassOf(typeof(Entity)));
 

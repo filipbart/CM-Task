@@ -21,7 +21,7 @@ public sealed class ApplicationModule : Module
             .InstancePerLifetimeScope();
 
         builder.RegisterType<DiscountEngine>()
-            .AsSelf()
+            .AsImplementedInterfaces()
             .InstancePerLifetimeScope();
     }
 }
